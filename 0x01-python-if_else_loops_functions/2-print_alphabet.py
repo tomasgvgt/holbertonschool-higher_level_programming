@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+alphabet = ""
 for i in range(97, 123):
-      alpha = chr(i)
-      print(alpha, end='')
+    alphabet = alphabet + chr(i)
+print(alphabet, end='')
