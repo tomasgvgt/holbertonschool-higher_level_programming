@@ -30,7 +30,7 @@ tmp1 = new;
 return (new);
 }
 
-while (tmp1->next && tmp1->next-n < number)
+while (tmp1->next && tmp1->next->n < number)
 {
 tmp1 = tmp1->next;
 }
