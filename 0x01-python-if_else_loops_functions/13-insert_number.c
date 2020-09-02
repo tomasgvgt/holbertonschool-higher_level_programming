@@ -16,13 +16,19 @@ listint_t *tmp1 = *head;
 listint_t *new;
 
 if (!head)
-  return (NULL);
+return (NULL);
 new = malloc(sizeof(listint_t));
 if (new == NULL)
 return (NULL);
 
 new->n = number;
 new->next = NULL;
+
+if (tmp1 == NULL)
+{
+tmp1 = new;
+return (new);
+}
 
 while (tmp1->next->n < number && tmp1->next != NULL)
 {
