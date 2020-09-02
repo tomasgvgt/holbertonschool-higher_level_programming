@@ -24,7 +24,7 @@ return (NULL);
 new->n = number;
 new->next = NULL;
 
-while (tmp1->next->n < number && tmp1 != NULL)
+while (tmp1->next->n < number && tmp1->next != NULL)
 {
 tmp1 = tmp1->next;
 }
