@@ -24,8 +24,9 @@ return (NULL);
 new->n = number;
 new->next = NULL;
 
-if (tmp1 == NULL)
+if (tmp1 == NULL || tmp1->n > number)
 {
+new->next = tmp1;
 tmp1 = new;
 return (new);
 }
