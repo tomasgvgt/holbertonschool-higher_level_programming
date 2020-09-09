@@ -14,6 +14,8 @@ int i, j, k, len = 0;
 listint_t *tmp1, *tmp2;
 
 tmp1 = *head;
+if (!tmp1 || tmp1->next == NULL)
+return (1);
 while (tmp1)
 {
 tmp1 = tmp1->next;
