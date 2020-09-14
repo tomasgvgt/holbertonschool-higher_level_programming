@@ -5,7 +5,7 @@ def roman_to_int(roman_string):
     result = 0
 
     if not roman_string or type(roman_string) is not str:
-        return None
+        return 0
     for i in range(len(roman_string)):
         if i < len(roman_string) - 1:
             if r_sym[roman_string[i + 1]] <= r_sym[roman_string[i]]:
