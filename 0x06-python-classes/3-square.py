@@ -1,4 +1,4 @@
-#!/usr/bin/pythton3
+#!/usr/bin/pyton3
 """ Definition of class Square"""
 
 
