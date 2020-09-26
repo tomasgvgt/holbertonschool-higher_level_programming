@@ -1,0 +1,60 @@
+tests for the 0-add_integer module
+
+Import module:
+       >>> add_integer = __import__('0-add_integer').add_integer
+
+Test Cases:
+
+Test 1: Add two ints
+     >>> add_integer(5, -100)
+     -95
+
+Test 2: Add int and str
+     >>> add_integer(99, "Hello")
+     Traceback (most recent call last):
+     ...
+     TypeError: b must be an integer
+
+Test 3: Add int and boolean
+     >>> add_integer(109, True)
+     Traceback (most recent call last):
+     ...
+     TypeError: b must be an integer
+
+Test 4: Add dictionary and int
+     >>> add_integer({2, 4}, 18)
+     Traceback (most recent call last):
+     ...
+     TypeError: a must be an integer
+
+Test 5: No parameters
+     >>> add_integer()
+     Traceback (most recent call last):
+     ...
+     TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test 6: More parameters
+     >>> add_integer(1, 2, 3)
+     Traceback (most recent call last):
+     ...
+     TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+Test 7: one parameter
+     >>> add_integer(19)
+     117
+
+Test 8: Parameter inf
+     >>> add_integer(float('inf'))
+     Traceback (most recent call last):
+     ...
+     OverflowError: cannot convert float infinity to integer
+
+Test 9: Parameter NaN
+     >>> add_integer(float('NaN'))
+     Traceback (most recent call last):
+     ...
+     ValueError: cannot convert float NaN to integer
+
+Test 10: Float parameters
+     >>> add_integer(2.5, 3.5)
+     5

@@ -1,0 +1,30 @@
+tests for the 5-text_indentation module
+
+Import module:
+       >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test Cases:
+
+Test 1: text int
+     >>> text_indentation(20)
+     Traceback (most recent call last):
+     ...
+     TypeError: text must be a string
+
+
+Test 2: empty string
+     >>> text_indentation("")
+
+Test 3: no text
+     >>> text_indentation()
+     Traceback (most recent call last):
+     ...
+     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Test 4: text
+     >>> text_indentation("Tus ojos ven.   Y tus oidos ecuchan. lo que tu tu cerebro busca!")
+     Tus ojos ven.
+     <BLANKLINE>
+     Y tus oidos ecuchan.
+     <BLANKLINE>
+     lo que tu tu cerebro busca!
