@@ -67,4 +67,4 @@ class Rectangle:
 
     def __del__(self):
         """Special method called when an instance is deleted"""
-        print("Bye Rectangle...")
+        print("Bye rectangle...")
