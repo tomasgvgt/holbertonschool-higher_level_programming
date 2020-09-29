@@ -3,11 +3,11 @@
 
 
 class Rectangle:
+    """Class that defines a rectangle"""
 
     number_of_instances = 0
-    print_symbol = "#"
+    print_symbol = '#'
 
-    """Class that defines a rectangle"""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -58,8 +58,10 @@ class Rectangle:
         rect = ""
         if self.__width == 0 or self.__height == 0:
             return rect
+        if type(self.print_symbol) != str:
+            self.print_symbol = str(self.print_symbol)
         for row in range(self.__height):
-            rect += (str(self.print_symbol) * self.__width) + '\n'
+            rect += (self.print_symbol * self.__width) + '\n'
         return rect[:-1]
 
     def __repr__(self):
