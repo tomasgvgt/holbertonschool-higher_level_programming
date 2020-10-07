@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""COntains:
+class MyList(list)
+"""
 
 
 class MyList(list):

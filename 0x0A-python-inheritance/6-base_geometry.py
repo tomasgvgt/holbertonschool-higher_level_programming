@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""COntains:
+class BaseGeometry
+"""
+
+
 class BaseGeometry:
     def area(self):
         """Raises an exception:
