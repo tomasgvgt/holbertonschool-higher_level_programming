@@ -5,6 +5,7 @@ class BaseGeometry
 
 
 class BaseGeometry:
+    """Class BaseGeometry"""
     def area(self):
         """Raises an exception:
         Area is not implemented

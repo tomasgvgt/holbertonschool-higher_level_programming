@@ -8,6 +8,7 @@ Rectangle = __import__("9-rectangle").Rectangle
 
 
 class Square(Rectangle):
+    """CLass Square"""
     def __init__(self, size):
         """Instantiator:
         size will be private
