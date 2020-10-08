@@ -11,9 +11,13 @@ load_from_json_file = __import__('8-load_from_json_file').load_from_json_file
 filename = "add_item.json"
 
 try:
-    arguments = load_from_json_file(filename)
+    # Tries to load the content of the json file into my_list
+    my_list = load_from_json_file(filename)
 except:
-    arguments = []
+    # If the file doesnt existe yet, create an empty list
+    my_list = []
 
-arguments.extend(sys.argv[1:])
-save_to_json_file(arguments, filename)
+# Extend the list adding all the arguments starting from argument 1
+my_list.extend(sys.argv[1:])
+# Writes my_list into the file, in json format
+save_to_json_file(my_list, filename)
