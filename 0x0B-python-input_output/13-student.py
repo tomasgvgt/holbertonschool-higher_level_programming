@@ -24,3 +24,9 @@ class Student:
             except:
                 pass
         return new_dictionary
+
+    def reload_from_json(self, json):
+        """replaces all attributes of the Student instance"""
+        if not json:
+            return
+        self.__dict__ = json
