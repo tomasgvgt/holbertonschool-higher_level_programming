@@ -5,6 +5,7 @@ class Student
 
 
 class Student:
+    """Represents Students"""
     def __init__(self, first_name, last_name, age):
         """Initializes Student instance"""
         self.first_name = first_name
