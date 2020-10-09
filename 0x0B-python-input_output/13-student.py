@@ -29,4 +29,16 @@ class Student:
         """replaces all attributes of the Student instance"""
         if not json:
             return
+        # Make the dictionary if the instance, thesame as the json dictionary.
         self.__dict__ = json
+
+        """Other way:
+        # look for all the keys in json
+        for key in json:
+            try:
+                # Set the attribute of the object to the one in json
+                setattr(self, key, json[key])
+            except:
+                # pass if there was no attribute name thesame as that key
+                pass
+        """

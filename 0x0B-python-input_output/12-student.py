@@ -16,10 +16,13 @@ class Student:
         """retrieves a dictionary representation of
         a Student instance"""
         if attrs is None:
+            # If there is no attributes, return all the dict.
             return self.__dict__
+        # If there are attributes, only those should be retrieved.
         new_dictionary = {}
         for key in attrs:
             try:
+                # Add to the new_dictionary only the key: value found in attrs
                 new_dictionary[key] = self.__dict__[key]
             except:
                 pass
