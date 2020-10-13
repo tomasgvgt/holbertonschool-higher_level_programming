@@ -102,4 +102,9 @@ class Rectangle(Base):
 
     def to_dictionary(self):
         """Returns the dicitionary representation of a Square"""
+        return {'x': self.x, 'y': self.y, 'id': self.id, 'height': self.height,
+                'width': self.width}
+        """Another way:
+
         return self.__dict__
+        """
