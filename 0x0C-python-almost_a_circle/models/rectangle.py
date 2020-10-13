@@ -101,4 +101,5 @@ class Rectangle(Base):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Returns the dicitionary representation of a Square"""
         return self.__dict__

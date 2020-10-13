@@ -32,6 +32,7 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """Assigns an argument to each attribute"""
         if args and len(args) > 0:
             atributes = ["id", "size", "x", "y"]
             for index, value in enumerate(args):
@@ -41,4 +42,5 @@ class Square(Rectangle):
                 setattr(self, key, value)
 
     def to_dictionary(self):
+        """Returns a dictionary representation of an instance"""
         return self.__dict__
