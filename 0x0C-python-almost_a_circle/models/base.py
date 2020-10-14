@@ -87,6 +87,6 @@ class Base:
                 for elem in obj_list:
                     instance = cls.create(**elem)
                     instance_list.append(instance)
-                    return instance_list
+                return instance_list
         except:
             return instance_list
