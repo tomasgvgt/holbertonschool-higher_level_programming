@@ -78,15 +78,24 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """returns a list of instances"""
+        # Filename must be <class name>.json
         file_name = cls.__name__ + ".json"
         instance_list = []
+        # Try to open the filename and create the list of instances
         try:
             with open(file_name) as f:
+                # Read the json file and save its contents
                 json_string = f.read()
+                # Use the static method from_json_strig to create a list
+                # of dictionaries
                 obj_list = cls.from_json_string(json_string)
-                for elem in obj_list:
-                    instance = cls.create(**elem)
+                # Go through the list
+                for dictio in obj_list:
+                    # Create an instance using the dictionary
+                    instance = cls.create(**dictio)
+                    # Append the instance to the list
                     instance_list.append(instance)
                 return instance_list
         except:
+            # If ther filename doesnt exist, return an empty list
             return instance_list
