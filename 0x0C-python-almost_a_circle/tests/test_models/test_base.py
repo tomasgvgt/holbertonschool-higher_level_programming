@@ -22,9 +22,11 @@ class TestBase(TestCase):
         # Test if base objects have correct id
         self.assertEqual(base_object.id, 1)
         self.assertEqual(base_object_id_7.id, 7)
+        # Test if ID exists
+        self.assertTrue(hasattr(base_object, 'id'))
 
     def test_to_json_string(self):
-        """Test the public method to_json_string"""
+        """Test the static method to_json_string"""
         r1 = Rectangle(20, 10, 2, 4)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
@@ -36,3 +38,19 @@ class TestBase(TestCase):
         # Test if it returns "[]" when the list is None
         json_None = Base.to_json_string(None)
         self.assertEqual(json_None, "[]")
+
+    def test_from_json_string(self):
+        """Test the static method from_json_string"""
+        list_input = [
+            {'id': 90, 'width': 5, 'height': 2},
+            {'id': 10, 'width': 6, 'height': 7}
+        ]
+        json_list_input = Base.to_json_string(list_input)
+        list_output = Base.from_json_string(json_list_input)
+        # Test if it returns a list
+        self.assertIsInstance(list_output, list)
+        # Test if it returns an empty list when the input is None or empty
+        list_output = Base.from_json_string(None)
+        self.assertEqual(list_output, [])
+        list_output = Base.from_json_string("")
+        self.assertEqual(list_output, [])
