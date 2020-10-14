@@ -3,6 +3,7 @@
 class Base
 """
 import json
+import os.path
 
 
 class Base:
@@ -58,3 +59,34 @@ class Base:
                 json_string = cls.to_json_string(list_of_dict)
                 # Write json_string into the file
                 f.write(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """returns an instance with all attributes already set"""
+        # If the instance to create is of class Rectangle
+        if cls.__name__ == "Rectangle":
+            # Create a dummy instance of class Rectangle
+            dummy_instance = cls(2, 3)
+        # If the instance to create is of class Square
+        if cls.__name__ == "Square":
+            # Create a dummy instance of class Square
+            dummy_instance = cls(2)
+        # Update the dummy_instance with the values passed in **dictionary
+        dummy_instance.update(**dictionary)
+        return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        file_name = cls.__name__ + ".json"
+        if not os.path.isfile(file_name):
+            return []
+        else:
+            instance_list = []
+            with open(file_name) as f:
+                json_string = f.read()
+                obj_list = cls.from_json_string(json_string)
+                for elem in obj_list:
+                    instance = cls.create(**elem)
+                    instance_list.append(instance)
+        return instance_list
