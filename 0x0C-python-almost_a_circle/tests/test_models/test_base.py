@@ -54,3 +54,19 @@ class TestBase(TestCase):
         self.assertEqual(list_output, [])
         list_output = Base.from_json_string("")
         self.assertEqual(list_output, [])
+
+    def test_save_to_file(self):
+        """Tests the class method save_to_file"""
+        r1 = Rectangle(10, 7, 2, 8)
+        r2 = Rectangle(2, 4)
+        # Create a file with a json representation of r1 and r2
+        Rectangle.save_to_file([r1, r2])
+        # Open the file
+        with open("Rectangle.json", "r") as f:
+            # Read the file and create a list
+            list_of_obj = Base.from_json_string(f.read())
+        # Verify if there are two objects in the list
+        self.assertEqual(len(list_of_obj), 2)
+        # Verify if with and height of r1 are correct
+        self.assertEqual(list_of_obj[0]["width"], 10)
+        self.assertEqual(list_of_obj[0]["height"], 6)
