@@ -8,6 +8,7 @@ from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
 
+
 # Create a subclass of the class TestCase(unittest):
 class TestBase(TestCase):
     """Holds the tests for Base
