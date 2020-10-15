@@ -66,8 +66,8 @@ class TestBase(TestCase):
         with open("Rectangle.json", "r") as f:
             # Read the file and create a list
             list_of_obj = Base.from_json_string(f.read())
-        # Verify if there are two objects in the list
-        self.assertEqual(len(list_of_obj), 2)
-        # Verify if with and height of r1 are correct
-        self.assertEqual(list_of_obj[0]["width"], 10)
-        self.assertEqual(list_of_obj[0]["height"], 6)
+            # Verify if there are two objects in the list
+            self.assertEqual(len(list_of_obj), 2)
+            # Verify if with and height of r1 are correct
+            self.assertEqual(list_of_obj[0]["width"], 10)
+            self.assertEqual(list_of_obj[0]["height"], 6)
