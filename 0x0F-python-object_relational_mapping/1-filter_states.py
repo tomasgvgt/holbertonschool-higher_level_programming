@@ -12,7 +12,7 @@ if __name__ == "__main__":
     c = database.cursor()
     c.execute(
         "SELECT id, name "
-        "FROM states WHERE name REGEXP '^N' ORDER BY states.id ASC"
+        "FROM states WHERE name like 'N%' ORDER BY states.id ASC"
         )
     query_rows = c.fetchall()
     for row in query_rows:
