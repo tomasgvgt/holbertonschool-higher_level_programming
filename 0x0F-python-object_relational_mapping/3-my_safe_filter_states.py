@@ -14,7 +14,7 @@ if __name__ == "__main__":
     c = database.cursor()
     c.execute(
         "SELECT * "
-        "FROM states WHERE name = '%s' ORDER BY states.id ASC" % argv[4]
+        "FROM states WHERE name = %s ORDER BY states.id ASC", (argv[4], )
     )
     query_rows = c.fetchall()
     for row in query_rows:
