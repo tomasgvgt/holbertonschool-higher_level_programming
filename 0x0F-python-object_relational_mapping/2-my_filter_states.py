@@ -14,10 +14,11 @@ if __name__ == "__main__":
     c = database.cursor()
     c.execute(
         "SELECT id, name "
-        "FROM states WHERE name = '{}' ORDER BY states.id ASC".format(argv[4])
+        "FROM states ORDER BY states.id ASC"
     )
     query_rows = c.fetchall()
     for row in query_rows:
-        print(row)
+        if row[1] == argv[4]:
+            print(row)
     c.close()
     database.close()
