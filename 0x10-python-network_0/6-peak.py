@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""Finds a peak in a list of integers"""
+
 
 def find_peak(list_of_integers):
-    if len(list_of_integers) == 0:
+    """Finds peaks"""
+    if not list_of_integers:
         return
-    sorted_list = sorted(list_of_integers)
-    return sorted_list[-1]
+    list_of_integers.sort()
+    return list_of_integers[-1]
