@@ -1,4 +1,4 @@
-#!/usr/bin/node
+#!/usr/local/bin/node
 if (process.argv.length <= 3) {
   console.log('0');
 } else {
@@ -9,6 +9,9 @@ if (process.argv.length <= 3) {
     if (parseInt(process.argv[i]) > max) {
       max = parseInt(process.argv[i]);
     }
+  }
+  if (second === max) {
+    second = parseInt(process.argv[3]);
   }
   for (i = 3; i < process.argv.length; i++) {
     if (parseInt(process.argv[i]) > second && parseInt(process.argv[i]) < max) {
