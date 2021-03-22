@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const lines = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
 let i;
 for (i = 0; i < 3; i++) {

@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 let i;
 let xtring = '';
 if (isNaN(parseInt(process.argv[2]))) {
