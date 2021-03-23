@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 // Returns the reversed version of a list
 exports.esrever = function (list) {
   let i;

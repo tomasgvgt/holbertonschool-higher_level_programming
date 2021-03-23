@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 const Square = require('./5-square');
 // Square class that inherits from Square
 class SquareTwo extends Square {

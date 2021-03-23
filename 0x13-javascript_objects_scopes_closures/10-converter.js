@@ -1,4 +1,4 @@
-#!/usr/local/bin/node
+#!/usr/bin/node
 // Converts a number from base 10 to another base pased as argument
 exports.converter = function (base) {
   return function (num) {
