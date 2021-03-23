@@ -4,16 +4,17 @@ const Squared = require('./5-square');
 class Square extends Squared {
   charPrint (c) {
     if (c === undefined) {
-      super.print();
+      c = 'X';
     } else {
-      let i;
-      let ctring = '';
-      for (i = 0; i < this.width; i++) {
-        ctring += 'C';
-      }
-      for (i = 0; i < this.height; i++) {
-        console.log(ctring);
-      }
+      c = 'C';
+    }
+    let i;
+    let ctring = '';
+    for (i = 0; i < this.width; i++) {
+      ctring += c;
+    }
+    for (i = 0; i < this.height; i++) {
+      console.log(ctring);
     }
   }
 }
