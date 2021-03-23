@@ -5,8 +5,6 @@ class Square extends Squared {
   charPrint (c) {
     if (c === undefined) {
       c = 'X';
-    } else {
-      c = 'C';
     }
     let i;
     let ctring = '';
