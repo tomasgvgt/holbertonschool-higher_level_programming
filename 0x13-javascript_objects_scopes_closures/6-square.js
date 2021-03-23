@@ -1,7 +1,7 @@
 #!/usr/bin/node
-const Square = require('./5-square');
+const Squared = require('./5-square');
 // Square class that inherits from Square
-class SquareTwo extends Square {
+class Square extends Squared {
   charPrint (c) {
     if (c === undefined) {
       super.print();
@@ -17,4 +17,4 @@ class SquareTwo extends Square {
     }
   }
 }
-module.exports = SquareTwo;
+module.exports = Square;
