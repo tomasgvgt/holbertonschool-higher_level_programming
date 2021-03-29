@@ -14,10 +14,12 @@ if __name__ == "__main__":
         password=argv[2],
         database=argv[3])
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE states.name like 'N%'"
-                "ORDER BY states.id ASC")
+    # cur.execute("SELECT * FROM states WHERE states.name like 'N%'"
+                # "ORDER BY states.id ASC")
+    cur.execute("SELECT * FROM states ORDER BY states.id ASC")
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1][0] =='N':
+            print(row)
     cur.close()
     db.close()
