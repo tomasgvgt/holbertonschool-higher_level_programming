@@ -4,7 +4,7 @@ Python script that fetches https://intranet.hbtn.io/status
 """
 from urllib import request
 
-if __name__== "__main__": 
+if __name__ == "__main__":
     with request.urlopen("https://intranet.hbtn.io/status") as resp:
         data = resp.read()
     html = data.decode("UTF-8")
